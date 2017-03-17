@@ -4,25 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <link href="style/css.css" rel="stylesheet" type="text/css">
-  <title>文件夹分析器</title>
+  <title>demo</title>
 </head>
 
 <body>
   <div class='main'>
-    <div class='btn' id='select'>选择工程目录</div>
+    <div class='body'>
+      <div class='tree'>
+        <div class='line'>
+          <div class='item'>root</div>
+        </div>
+        <div class='line'>
+          <div class='item'>item</div>
+          <div class='item'>item</div>
+          <div class='item'>root</div>
+        </div>
+      </div>
+    </div>
+    <div class='bottom'>
+      <div class='button'>open</div>
+    </div>
   </div>
-  <script>
-    const { dialog } = require('electron').remote
-    const main = require("../index")
-    let select = document.getElementById('select')
-    select.addEventListener('click',function(){
-      dialog.showOpenDialog({properties: ['openDirectory']},function(dir){
-        if(dir){
-          console.log(main(dir[0]));
-        }
-      })
-    })
-  </script>
+  <script src='../app/index.js'></script>
 </body>
 
 </html>

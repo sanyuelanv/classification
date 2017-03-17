@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const ignore = ['node_modules','.DS_Store','npm-debug.log']
-const getRootName = require("./config/getname")
+const getRootName = require("../config/getname")
 // const mylog = require("./config/log")
 
 // var app = express()
