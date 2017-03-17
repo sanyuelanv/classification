@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="style/css.css" rel="stylesheet" type="text/css">
+  <title>文件夹分析器</title>
+</head>
+
+<body>
+  <div class='main'>
+    <div class='btn' id='select'>选择工程目录</div>
+  </div>
+  <script>
+    const { dialog } = require('electron').remote
+    const main = require("../index")
+    let select = document.getElementById('select')
+    select.addEventListener('click',function(){
+      dialog.showOpenDialog({properties: ['openDirectory']},function(dir){
+        if(dir){
+          console.log(main(dir[0]));
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
